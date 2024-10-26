@@ -38,7 +38,7 @@ async function removeContact(contactId) {
     const contacts = await fs.readFile(contactsPath);
     const splicedContact = removeContactFromFile(contacts, contactId);
     await fs.writeFile(contactsPath, splicedContact);
-    console.log('Success!')
+    console.log('Contact has been deleted!')
     
     } catch (error) {
     console.log(error.message)
@@ -52,7 +52,7 @@ async function addContact(name, email, phone) {
     const contacts = await fs.readFile(contactsPath);
     const contactAdded = addContactToFile(contacts, name, email, phone);
     await fs.writeFile(contactsPath, contactAdded);
-    console.log('Success!')
+    console.log('Contact has been added!')
     
     } catch (error) {
     console.log(error.message)
